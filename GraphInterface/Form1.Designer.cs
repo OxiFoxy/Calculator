@@ -338,69 +338,8 @@ namespace GraphInterface
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.Location = new System.Drawing.Point(125, 58);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(55, 49);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "6";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button11.Location = new System.Drawing.Point(3, 113);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(55, 49);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "7";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button12.Location = new System.Drawing.Point(64, 113);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(55, 49);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "8";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.Location = new System.Drawing.Point(125, 113);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(55, 49);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "9";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button14.ForeColor = System.Drawing.Color.Red;
-            this.button14.Location = new System.Drawing.Point(186, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(55, 49);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "/";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(64, 168);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(55, 49);
-            this.button15.TabIndex = 12;
-            this.button15.Text = "+/-";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
+            
+           
             // button16
             // 
             this.buttonDiv.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -501,17 +440,7 @@ namespace GraphInterface
             this.textBoxResult.Size = new System.Drawing.Size(273, 26);
             this.textBoxResult.TabIndex = 3;
             // 
-            // button24
-            // 
-            this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button24.ForeColor = System.Drawing.Color.Red;
-            this.button24.Location = new System.Drawing.Point(3, 165);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(56, 49);
-            this.button24.TabIndex = 9;
-            this.button24.Text = "=";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
+           
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
