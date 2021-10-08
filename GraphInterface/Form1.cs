@@ -16,5 +16,10 @@ namespace GraphInterface
         {
             InitializeComponent();
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
