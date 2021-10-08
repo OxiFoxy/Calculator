@@ -124,7 +124,7 @@ namespace GraphInterface
             this.tableLayoutPanel2.Size = new System.Drawing.Size(62, 217);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // groupBox1
+            // buttonEqual
             // 
             this.buttonEqual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonEqual.ForeColor = System.Drawing.Color.Red;
@@ -337,10 +337,9 @@ namespace GraphInterface
             this.button9.TabIndex = 10;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            
-           
-            // button16
+            // buttonDiv
             // 
             this.buttonDiv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonDiv.ForeColor = System.Drawing.Color.Red;
@@ -365,8 +364,18 @@ namespace GraphInterface
             this.buttonMult.Click += new System.EventHandler(this.buttonMult_Click);
             // 
             // buttonSub
-            // button19
+            // 
             this.buttonSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSub.ForeColor = System.Drawing.Color.Red;
+            this.buttonSub.Location = new System.Drawing.Point(186, 113);
+            this.buttonSub.Name = "buttonSub";
+            this.buttonSub.Size = new System.Drawing.Size(55, 49);
+            this.buttonSub.TabIndex = 18;
+            this.buttonSub.Text = "-";
+            this.buttonSub.Click += new System.EventHandler(this.buttonSub_Click);
+            // 
+            // buttonAdd
+            // 
             this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAdd.ForeColor = System.Drawing.Color.Red;
             this.buttonAdd.Location = new System.Drawing.Point(186, 168);
@@ -376,9 +385,9 @@ namespace GraphInterface
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            this.buttonSub.Click += new System.EventHandler(this.buttonSub_Click);
+            // 
             // groupBox1
-            // buttonAdd
+            // 
             this.groupBox1.Controls.Add(this.buttonC);
             this.groupBox1.Controls.Add(this.buttonBS);
             this.groupBox1.Controls.Add(this.buttonCloseBracket);
@@ -440,7 +449,6 @@ namespace GraphInterface
             this.textBoxResult.Size = new System.Drawing.Size(273, 26);
             this.textBoxResult.TabIndex = 3;
             // 
-           
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

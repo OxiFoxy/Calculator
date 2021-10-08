@@ -27,8 +27,8 @@ namespace GraphInterface
 
         private void button2_Click(object sender, EventArgs e)
         {
-            expression += "1";
-            textBoxExpression.Text += "1";
+            expression += "2";
+            textBoxExpression.Text += "2";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -67,7 +67,6 @@ namespace GraphInterface
             expression += "8";
             textBoxExpression.Text += "8";
         }
-
         private void button9_Click(object sender, EventArgs e)
         {
             expression += "9";
@@ -159,9 +158,6 @@ namespace GraphInterface
             textBoxExpression.Text += "%";
         }
 
-        private void button21_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
