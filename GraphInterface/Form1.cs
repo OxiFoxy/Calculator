@@ -126,7 +126,7 @@ namespace GraphInterface
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
-
+            // textBoxResult.Text = Analaizer.Estimate();
         }
 
         private void buttonOpenBracket_Click(object sender, EventArgs e)
