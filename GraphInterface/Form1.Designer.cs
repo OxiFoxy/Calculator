@@ -33,13 +33,15 @@ namespace GraphInterface
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -50,21 +52,19 @@ namespace GraphInterface
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -106,64 +106,68 @@ namespace GraphInterface
             this.panel1.Size = new System.Drawing.Size(405, 473);
             this.panel1.TabIndex = 3;
             // 
-            // textBox2
+            // tableLayoutPanel2
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(273, 26);
-            this.textBox2.TabIndex = 3;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.button24, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.button21, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button22, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button23, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(321, 227);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(62, 217);
+            this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // groupBox1
+            // button24
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(21, 108);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 88);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Editing";
+            this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button24.ForeColor = System.Drawing.Color.Red;
+            this.button24.Location = new System.Drawing.Point(3, 165);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(56, 49);
+            this.button24.TabIndex = 9;
+            this.button24.Text = "=";
+            this.button24.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button21
             // 
-            this.button1.Location = new System.Drawing.Point(15, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "(";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button21.ForeColor = System.Drawing.Color.MediumBlue;
+            this.button21.Location = new System.Drawing.Point(3, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(56, 48);
+            this.button21.TabIndex = 5;
+            this.button21.Text = "MR";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
-            // button2
+            // button22
             // 
-            this.button2.Location = new System.Drawing.Point(63, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = ")";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button22.ForeColor = System.Drawing.Color.MediumBlue;
+            this.button22.Location = new System.Drawing.Point(3, 57);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(56, 48);
+            this.button22.TabIndex = 7;
+            this.button22.Text = "M+";
+            this.button22.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button23
             // 
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(128, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 36);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Backspace";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(271, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 36);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "C";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button23.ForeColor = System.Drawing.Color.MediumBlue;
+            this.button23.Location = new System.Drawing.Point(3, 111);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(56, 48);
+            this.button23.TabIndex = 8;
+            this.button23.Text = "MC";
+            this.button23.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -197,6 +201,38 @@ namespace GraphInterface
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(244, 220);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // button20
+            // 
+            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button20.ForeColor = System.Drawing.Color.Red;
+            this.button20.Location = new System.Drawing.Point(125, 168);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(55, 49);
+            this.button20.TabIndex = 17;
+            this.button20.Text = "mod";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button19.Location = new System.Drawing.Point(3, 168);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(55, 49);
+            this.button19.TabIndex = 16;
+            this.button19.Text = "0";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button15.ForeColor = System.Drawing.Color.Black;
+            this.button15.Location = new System.Drawing.Point(64, 168);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(55, 49);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "+/-";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -300,17 +336,6 @@ namespace GraphInterface
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button15
-            // 
-            this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(64, 168);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(55, 49);
-            this.button15.TabIndex = 12;
-            this.button15.Text = "+/-";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
             // button16
             // 
             this.button16.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -344,88 +369,64 @@ namespace GraphInterface
             this.button18.Text = "+";
             this.button18.UseVisualStyleBackColor = true;
             // 
-            // button19
+            // groupBox1
             // 
-            this.button19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button19.Location = new System.Drawing.Point(3, 168);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(55, 49);
-            this.button19.TabIndex = 16;
-            this.button19.Text = "0";
-            this.button19.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(21, 108);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(362, 88);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Editing";
             // 
-            // button20
+            // button4
             // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.ForeColor = System.Drawing.Color.Red;
-            this.button20.Location = new System.Drawing.Point(125, 168);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(55, 49);
-            this.button20.TabIndex = 17;
-            this.button20.Text = "mod";
-            this.button20.UseVisualStyleBackColor = true;
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(271, 25);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 36);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "C";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel2
+            // button3
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.button24, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button21, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button22, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button23, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(321, 227);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(62, 217);
-            this.tableLayoutPanel2.TabIndex = 6;
+            this.button3.ForeColor = System.Drawing.Color.Red;
+            this.button3.Location = new System.Drawing.Point(128, 25);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(137, 36);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Backspace";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // button2
             // 
-            this.button21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button21.ForeColor = System.Drawing.Color.MediumBlue;
-            this.button21.Location = new System.Drawing.Point(3, 3);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(56, 48);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "MR";
-            this.button21.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(63, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 36);
+            this.button2.TabIndex = 1;
+            this.button2.Text = ")";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // button1
             // 
-            this.button22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button22.ForeColor = System.Drawing.Color.MediumBlue;
-            this.button22.Location = new System.Drawing.Point(3, 57);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(56, 48);
-            this.button22.TabIndex = 7;
-            this.button22.Text = "M+";
-            this.button22.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(15, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 36);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "(";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // textBox2
             // 
-            this.button23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button23.ForeColor = System.Drawing.Color.MediumBlue;
-            this.button23.Location = new System.Drawing.Point(3, 111);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(56, 48);
-            this.button23.TabIndex = 8;
-            this.button23.Text = "MC";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button24.ForeColor = System.Drawing.Color.Red;
-            this.button24.Location = new System.Drawing.Point(3, 165);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(56, 49);
-            this.button24.TabIndex = 9;
-            this.button24.Text = "=";
-            this.button24.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(110, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(273, 26);
+            this.textBox2.TabIndex = 3;
             // 
             // Form1
             // 
@@ -437,9 +438,9 @@ namespace GraphInterface
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

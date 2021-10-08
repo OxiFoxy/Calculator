@@ -21,5 +21,10 @@ namespace GraphInterface
         {
 
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
