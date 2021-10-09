@@ -243,7 +243,6 @@ namespace GraphInterface
         {
             if (e.KeyValue == (char)Keys.Escape)
             {
-
                 this.Close();
             }
         }
@@ -251,11 +250,6 @@ namespace GraphInterface
         private void textBoxResult_TextChanged(object sender, EventArgs e)
         {
             result = textBoxResult.Text;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
