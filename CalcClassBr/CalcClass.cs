@@ -127,7 +127,13 @@ namespace CalcClassBr
         {
             long res;
             if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
-                res = a % b;
+                if (b != 0)
+                    res = a % b;
+                else
+                {
+                    _lastError = ErrorsExpression.ERROR_09;
+                    throw new DivideByZeroException("You can't divide by 0!");
+                }
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
