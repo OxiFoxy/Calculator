@@ -44,5 +44,11 @@
     <Compile Include="CalcClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrorLibrary\ErrorLibrary.csproj">
+      <Project>{2a3279b9-c3b3-4c96-bd0b-aa63faa7e7cc}</Project>
+      <Name>ErrorLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

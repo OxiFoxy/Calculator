@@ -1,4 +1,5 @@
 ﻿using System;
+using ErrorLibrary;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,18 @@ namespace CalcClassBr
             if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
                 res = a + b;
             else
-                throw new Exception();
+                {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
                 return (int)res;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Result out of range!");
+            }
         }
         /// <summary> 
         /// функція віднімання чисел а і b 
@@ -39,12 +46,18 @@ namespace CalcClassBr
             if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
                 res = a - b;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range numbers!");
+            }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
                 return (int)res;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Result out of range!");
+            }
         }
         /// <summary> 
         /// функція множення чисел а і b 
@@ -58,12 +71,18 @@ namespace CalcClassBr
             if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
                 res = a * b;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range numbers!");
+            }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
                 return (int)res;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Result out of range!");
+            }
         }
         /// <summary> 
         /// функція знаходження частки 
@@ -78,14 +97,23 @@ namespace CalcClassBr
                 if (b != 0)
                     res = a / b;
                 else
+                {
+                    _lastError = ErrorsExpression.ERROR_09;
                     throw new DivideByZeroException("You can't divide by 0!");
+                }
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range numbers!");
+            }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
                 return (int)res;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Result out of range!");
+            }
 
 
         }
@@ -101,12 +129,18 @@ namespace CalcClassBr
             if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
                 res = a % b;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range numbers!");
+            }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
                 return (int)res;
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Result out of range!");
+            }
         }
 
         /// <summary> 
@@ -123,7 +157,10 @@ namespace CalcClassBr
                 return (int)res;
             }
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range number!");
+            }
         }
 
         /// <summary> 
@@ -140,7 +177,10 @@ namespace CalcClassBr
                 return (int)res;
             }
             else
-                throw new Exception();
+            {
+                _lastError = ErrorsExpression.ERROR_06;
+                throw new ArgumentOutOfRangeException("Out of range number!");
+            }
         }
 
         /// <summary> 
@@ -151,8 +191,8 @@ namespace CalcClassBr
 
         public static string lastError
         {
-            get;
-            //Втратив мотивацію
+            get { return _lastError; }
+            //Job well done!
         }
     }
 }
