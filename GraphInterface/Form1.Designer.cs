@@ -87,10 +87,14 @@ namespace GraphInterface
             // 
             // textBoxExpression
             // 
+            this.textBoxExpression.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxExpression.Location = new System.Drawing.Point(110, 17);
             this.textBoxExpression.Name = "textBoxExpression";
-            this.textBoxExpression.Size = new System.Drawing.Size(273, 26);
+            this.textBoxExpression.Size = new System.Drawing.Size(273, 35);
             this.textBoxExpression.TabIndex = 2;
+            this.textBoxExpression.TextChanged += new System.EventHandler(this.textBoxExpression_TextChanged);
+            this.textBoxExpression.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxExpression_KeyDown);
+            this.textBoxExpression.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxExpression_KeyPress);
             // 
             // panel1
             // 
@@ -443,11 +447,13 @@ namespace GraphInterface
             // 
             // textBoxResult
             // 
+            this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxResult.Location = new System.Drawing.Point(110, 65);
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.ReadOnly = true;
-            this.textBoxResult.Size = new System.Drawing.Size(273, 26);
+            this.textBoxResult.Size = new System.Drawing.Size(273, 35);
             this.textBoxResult.TabIndex = 3;
+            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // Form1
             // 
@@ -457,6 +463,7 @@ namespace GraphInterface
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
