@@ -29,6 +29,7 @@ namespace GraphInterface
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxExpression = new System.Windows.Forms.TextBox();
@@ -61,6 +62,7 @@ namespace GraphInterface
             this.buttonCloseBracket = new System.Windows.Forms.Button();
             this.buttonOpenBracket = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -93,8 +95,6 @@ namespace GraphInterface
             this.textBoxExpression.Size = new System.Drawing.Size(273, 35);
             this.textBoxExpression.TabIndex = 2;
             this.textBoxExpression.TextChanged += new System.EventHandler(this.textBoxExpression_TextChanged);
-            this.textBoxExpression.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxExpression_KeyDown);
-            this.textBoxExpression.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxExpression_KeyPress);
             // 
             // panel1
             // 
@@ -455,15 +455,21 @@ namespace GraphInterface
             this.textBoxResult.TabIndex = 3;
             this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 517);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -507,6 +513,7 @@ namespace GraphInterface
         private System.Windows.Forms.Button buttonMult;
         private System.Windows.Forms.Button buttonSub;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

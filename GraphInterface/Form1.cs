@@ -13,13 +13,17 @@ namespace GraphInterface
 {
     public partial class Form1 : Form
     {
-        string expression = "";
+      public static  string expression = "";
         int memory = 0;
         string result = "0";
         private bool nonNumberEntered = false;
+        int timercount = 0;
+        bool IstimeOut = false;
         public Form1()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            if (expression != "")
+                textBoxExpression.Text = expression;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,42 +77,84 @@ namespace GraphInterface
         private void buttonABS_Click(object sender, EventArgs e)
         {
             int count = 0;
-            char sign = '+';
-            char temp = Convert.ToChar(textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1));
-            bool check = isNumber(temp);
-            long a = 0;
-            string numberToConvert = "";
-
-            if (check == true)
+            char sign = ' ';
+            if (IstimeOut == false)
             {
-                count++;
-                numberToConvert += temp;
-                while (check == true && textBoxExpression.Text.Length > count)
+                char temp = Convert.ToChar(textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1));
+                bool check = isNumber(temp);
+                long a = 0;
+                string numberToConvert = "";
+
+                if (check == true)
                 {
-                    int from = textBoxExpression.Text.Length - count - 1;
-                    temp = textBoxExpression.Text.Substring(from).First();
-                    check = isNumber(temp);
-                    if (check == true)
+                    count++;
+                    numberToConvert += temp;
+                    while (check == true && textBoxExpression.Text.Length > count)
                     {
-                        numberToConvert = temp + numberToConvert;
-                        count++;
+                        int from = textBoxExpression.Text.Length - count - 1;
+                        temp = textBoxExpression.Text.Substring(from).First();
+                        check = isNumber(temp);
+                        if (check == true)
+                        {
+                            numberToConvert = temp + numberToConvert;
+                            count++;
+                        }
+                        else sign = temp;
                     }
-                    else sign = temp;
-                }
 
-                a = long.Parse(numberToConvert);
-            }
-            int number = 0;
-            if (sign == '*' || sign == '/' || sign == '+' || sign == '-')
-            {
-                number = CalcClass.IABS(a);
-                textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "(" + number;
+                    a = long.Parse(numberToConvert);
+                }
+                // int number = 0;
+                if (sign == '*' || sign == '/')
+                {
+                    // number = CalcClass.IABS(a);
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "m" + a;
+                }
+                else if (sign == '+')
+                {
+                    //number = CalcClass.IABS(a);
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count-1) + "-" + a;
+                }
+                else if (sign == '-')
+                {
+                    //number = CalcClass.IABS(a);
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count-1) + "+" + a;
+                }
+                else if (sign == 'p')
+                {
+                    //number = CalcClass.IABS(a);
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count - 1) + "m" + a;
+                }
+                else if (sign == 'm')
+                {
+                    //number = CalcClass.IABS(a);
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count - 1) + "p" + a;
+                }
+                else if(sign == '(')
+                {
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "m" + a;
+                }
+                else if (sign == ')')
+                {
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "-" + a;
+                }
+                else if (sign == ' ')
+                {
+                    textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "-" + a;
+                }
+                timer1.Start();
+                timer1.Interval = 1000;
             }
             else
             {
-                number = CalcClass.IABS(a);
-                textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + number;
+                if(textBoxExpression.Text.Substring(0).FirstOrDefault()=='+')
+                textBoxExpression.Text = "-"+"(" + expression+")";
+                else if (textBoxExpression.Text.Substring(0).FirstOrDefault() == '-')
+                    textBoxExpression.Text = expression;
             }
+
+           
+
         }
         private bool isNumber(char number)
         {
@@ -144,6 +190,7 @@ namespace GraphInterface
 
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
+
             int checkResult = 0;
             bool isNumber = int.TryParse(result, out checkResult);
             //TryParse переконвертовує введене стрінгове значення в Int32, та заодно перевіряє чи воно інтове, повертає
@@ -159,6 +206,8 @@ namespace GraphInterface
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Test");
+            //Analizer.Expression = textBoxExpression.Text;
             // textBoxResult.Text = Analaizer.Estimate();
         }
 
@@ -196,16 +245,36 @@ namespace GraphInterface
 
         private void textBoxExpression_TextChanged(object sender, EventArgs e)
         {
+            if(IstimeOut==true)
             expression = textBoxExpression.Text;
         }
-
-        private void textBoxExpression_KeyDown(object sender, KeyEventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             // Initialize the flag to false.
+         //   textBoxExpression.Focus();           
             nonNumberEntered = false;
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                this.Close();
+            }
             if (e.KeyValue == (char)Keys.Enter)
             {
                 buttonEqual_Click(sender, e);
+            }
+            //If shift key was pressed, it's not a number.
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                if (e.KeyCode != Keys.Multiply &&
+                    e.KeyCode == Keys.Oemplus ||
+                    e.KeyCode == Keys.OemOpenBrackets ||
+                    e.KeyCode == Keys.OemCloseBrackets 
+                //    e.KeyCode == Keys.Oem102 ||
+                //    e.KeyCode == Keys.Oem5
+                    )
+                {
+                   // MessageBox.Show(e.KeyCode.ToString());
+                    nonNumberEntered = true;
+               }
             }
             // Determine whether the keystroke is a number from the top of the keyboard.
             if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
@@ -214,22 +283,26 @@ namespace GraphInterface
                 if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
                 {
                     // Determine whether the keystroke is a backspace.
-                    if (e.KeyCode != Keys.Back)
+                    if (e.KeyCode != Keys.Back&&
+                    e.KeyCode != Keys.OemMinus&&
+                    e.KeyCode != Keys.Divide&&
+                    e.KeyCode != Keys.OemBackslash       
+                    )
                     {
-                        //    // A non-numerical keystroke was pressed.
-                        //    // Set the flag to true and evaluate in KeyPress event.
+                        // A non-numerical keystroke was pressed.
+                        // Set the flag to true and evaluate in KeyPress event.
                         nonNumberEntered = true;
                     }
                 }
-            }
-            //If shift key was pressed, it's not a number.
-            if (Control.ModifierKeys == Keys.Shift)
-            {
-                nonNumberEntered = true;
-            }
+            }                     
         }
 
-        private void textBoxExpression_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxResult_TextChanged(object sender, EventArgs e)
+        {
+            result = textBoxResult.Text;
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check for the flag being set in the KeyDown event.
             if (nonNumberEntered == true)
@@ -239,23 +312,23 @@ namespace GraphInterface
             }
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Escape)
+            
+            if (timercount <3)
             {
-
-                this.Close();
+                IstimeOut = false;
+                timercount++;
+                this.Text = timercount.ToString();
+            }
+            else
+            {
+                timer1.Stop();
+                timercount = 0;
+                IstimeOut = true;               
             }
         }
 
-        private void textBoxResult_TextChanged(object sender, EventArgs e)
-        {
-            result = textBoxResult.Text;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

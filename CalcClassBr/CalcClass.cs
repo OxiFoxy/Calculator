@@ -188,11 +188,11 @@ namespace CalcClassBr
         /// Поле і властивість для нього 
         /// </summary> 
         private static string _lastError = "";
-
         public static string lastError
         {
             get { return _lastError; }
             //Job well done!
         }
     }
+   
 }
