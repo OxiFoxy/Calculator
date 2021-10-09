@@ -78,7 +78,10 @@ namespace CalcClassBr
                 if (b != 0)
                     res = a / b;
                 else
+                {
+                    _lastError = "Error 09 You can't divide by 0!";
                     throw new DivideByZeroException("You can't divide by 0!");
+                }
             else
                 throw new Exception();
 
@@ -148,11 +151,10 @@ namespace CalcClassBr
         /// Поле і властивість для нього 
         /// </summary> 
         private static string _lastError = "";
-
         public static string lastError
         {
-            get;
-            //Втратив мотивацію
+            get { return _lastError; }
         }
     }
+   
 }
