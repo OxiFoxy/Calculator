@@ -9,7 +9,7 @@ namespace TestsClasses
     {
 
         public TestContext TestContext { get; set; }
-        [DataSource("System.Data.SqlClient", @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Богдан\Desktop\Calculator\CalcExamDB.mdf;Integrated Security=True;Connect Timeout=30", "DataForTest", DataAccessMethod.Sequential)]
+        [DataSource("System.Data.SqlClient", @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Богдан\Desktop\Calculator\TestsClasses\bin\Debug\CalcExamDB.mdf;Integrated Security=True;Connect Timeout=30", "DataForTest", DataAccessMethod.Sequential)]
         [TestMethod]
         public void MathOperationMetodTest()
         {
