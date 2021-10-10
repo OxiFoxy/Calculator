@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnalizerClassLibrary\AnalizerClassLibrary.csproj">
+      <Project>{28d27784-d8ef-42fd-9e46-c85481f20f20}</Project>
+      <Name>AnalizerClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CalcClassBr\CalcClassBr.csproj">
       <Project>{99cfe500-b39e-40d1-aafb-f185fc53070f}</Project>
       <Name>CalcClassBr</Name>
