@@ -63,6 +63,7 @@ namespace GraphInterface
             this.buttonOpenBracket = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -453,9 +454,8 @@ namespace GraphInterface
             this.textBoxResult.Location = new System.Drawing.Point(110, 108);
             this.textBoxResult.Multiline = true;
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.ReadOnly = true;
             this.textBoxResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResult.Size = new System.Drawing.Size(273, 60);
+            this.textBoxResult.Size = new System.Drawing.Size(273, 77);
             this.textBoxResult.TabIndex = 3;
             this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
@@ -520,6 +520,7 @@ namespace GraphInterface
         private System.Windows.Forms.Button buttonSub;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

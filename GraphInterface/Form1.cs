@@ -24,8 +24,6 @@ namespace GraphInterface
         char sign = ' ';
         public Form1()
         {
-            if (expression != null)
-                textBoxExpression.Text = expression;
             InitializeComponent();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -33,43 +31,36 @@ namespace GraphInterface
             textBoxExpression.Text += "1";
             IstimeOut = false;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "2";
             IstimeOut = false;
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "3";
             IstimeOut = false;
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "4";
             IstimeOut = false;
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "5";
             IstimeOut = false;
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "6";
             IstimeOut = false;
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "7";
             IstimeOut = false;
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "8";
@@ -80,7 +71,6 @@ namespace GraphInterface
             textBoxExpression.Text += "9";
             IstimeOut = false;
         }
-
         private void button0_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "0";
@@ -118,7 +108,7 @@ namespace GraphInterface
                     }
                     a = long.Parse(numberToConvert);
                 }
-                if (sign == '*' || sign == '/' || sign == '('|| sign == ' ')
+                if (sign == '*' || sign == '/' || sign == '(' || sign == ' ')
                 {
                     textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count) + "-" + a;
                 }
@@ -126,10 +116,10 @@ namespace GraphInterface
                 {
                     textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count - 1) + "-" + a;
                 }
-                else if (sign == '-'|| sign == 'm')
+                else if (sign == '-' || sign == 'm')
                 {
                     textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - count - 1) + "+" + a;
-                }    
+                }
                 else if (sign == ')')
                 {
                     textBoxExpression.Text = textBoxExpression.Text;
@@ -172,14 +162,24 @@ namespace GraphInterface
 
         private void buttonMR_Click(object sender, EventArgs e)
         {
-            textBoxExpression.Text = memory.ToString();
+            if (textBoxExpression.Text == "")
+                textBoxExpression.Text += memory.ToString();
+            else if (textBoxExpression.Text.Length > 0)
+            {
+                //  char res = textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault();
+                bool checkNumber = isNumber(textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault());
+                if (checkNumber == false)
+                    textBoxExpression.Text += memory.ToString();
+            }
+            label2.Text = "Memory";
             textBoxResult.Text = memory.ToString();
         }
 
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
+            buttonEqual_Click(sender, e);
             int checkResult = 0;
-            if(result=="")
+            if (result == "")
                 memory += 0;
             else
             {
@@ -196,7 +196,7 @@ namespace GraphInterface
                 }
                 else MessageBox.Show($"Error code can't be written into memory!");
             }
-           
+
         }
 
         private void buttonMC_Click(object sender, EventArgs e)
@@ -206,13 +206,14 @@ namespace GraphInterface
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
-        {           
+        {
+            label2.Text = "Result";
             timercount = 0;
             IstimeOut = false;
             AnalaizerClass.expression = textBoxExpression.Text;
             string results = AnalaizerClass.Estimate();
             if (results.StartsWith("&"))
-            {                
+            {
                 this.textBoxResult.ForeColor = Color.Red;
                 this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -230,6 +231,7 @@ namespace GraphInterface
 
         private void buttonOpenBracket_Click(object sender, EventArgs e)
         {
+            textBoxExpression.Focus();
             if (textBoxExpression.Text != "")
             {
                 char znak = textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault();
@@ -245,6 +247,7 @@ namespace GraphInterface
 
         private void buttonCloseBracket_Click(object sender, EventArgs e)
         {
+            textBoxExpression.Focus();
             textBoxExpression.Text += ")";
         }
 
@@ -272,13 +275,13 @@ namespace GraphInterface
         }
 
         private void textBoxExpression_TextChanged(object sender, EventArgs e)
-        {              
+        {
             expression = textBoxExpression.Text;
-                if (textBoxExpression.Text.Length>1&&textBoxExpression.Text.StartsWith("0"))
-                {
-                    textBoxExpression.Text= textBoxExpression.Text.Substring(1);
-                }
-            
+            if (textBoxExpression.Text.Length > 1 && textBoxExpression.Text.StartsWith("0"))
+            {
+                textBoxExpression.Text = textBoxExpression.Text.Substring(1);
+            }
+
             bool checkNumber = false;
             foreach (char item in textBoxExpression.Text)
             {
@@ -292,7 +295,7 @@ namespace GraphInterface
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             // Initialize the flag to false.
-            //   textBoxExpression.Focus();           
+            textBoxExpression.Focus();
             nonNumberEntered = false;
             if (e.KeyValue == (char)Keys.Escape)
             {
@@ -306,20 +309,18 @@ namespace GraphInterface
             //If shift key was pressed, it's not a number.
             if (Control.ModifierKeys == Keys.Shift)
             {
-                if (e.KeyCode == Keys.Multiply ||
-                    e.KeyCode == Keys.Oemplus ||
-                    e.KeyCode == Keys.OemOpenBrackets ||
-                    e.KeyCode == Keys.OemCloseBrackets ||
-                    e.KeyCode == Keys.Add
-                    //    e.KeyCode == Keys.Oem102 ||
-                    //    e.KeyCode == Keys.Oem5
+                if (e.KeyCode != Keys.Multiply &&
+                    e.KeyCode != Keys.Oemplus &&
+                    e.KeyCode != Keys.OemOpenBrackets &&
+                    e.KeyCode != Keys.OemCloseBrackets &&
+                    e.KeyCode != Keys.Add &&
+                    e.KeyCode != Keys.Oem102 &&
+                    e.KeyCode != Keys.Oem5
                     )
                 {
-                    // MessageBox.Show(e.KeyCode.ToString());
-                   // nonNumberEntered = false;
-                    nonNumberEntered = true;
+                    nonNumberEntered = false;
                 }
-              //  else nonNumberEntered = true;
+                else nonNumberEntered = true;
             }
             // Determine whether the keystroke is a number from the top of the keyboard.
             if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
@@ -327,26 +328,34 @@ namespace GraphInterface
                 // Determine whether the keystroke is a number from the keypad.
                 if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
                 {
-                    // Determine whether the keystroke is a backspace.
+                    // Determine whether the keystroke is not backspace or operands
                     if (e.KeyCode != Keys.Back &&
                     e.KeyCode != Keys.OemMinus &&
                     e.KeyCode != Keys.Divide &&
-                    e.KeyCode != Keys.OemBackslash
+                    e.KeyCode != Keys.OemBackslash &&
+                    e.KeyCode != Keys.Multiply &&
+                    e.KeyCode != Keys.Oemplus &&
+                    e.KeyCode != Keys.OemOpenBrackets &&
+                    e.KeyCode != Keys.OemCloseBrackets &&
+                    e.KeyCode != Keys.Add &&
+                    e.KeyCode != Keys.Oem102 &&
+                     e.KeyCode != Keys.Oem4 &&
+                     e.KeyCode != Keys.Oem5 &&
+                     e.KeyCode != Keys.OemQuestion
                     )
                     {
                         // A non-numerical keystroke was pressed.
                         // Set the flag to true and evaluate in KeyPress event.
                         nonNumberEntered = true;
                     }
+                    else nonNumberEntered = false;
                 }
             }
         }
-
         private void textBoxResult_TextChanged(object sender, EventArgs e)
         {
             result = textBoxResult.Text;
         }
-
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check for the flag being set in the KeyDown event.
@@ -356,9 +365,8 @@ namespace GraphInterface
                 e.Handled = true;
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
-        {           
+        {
             if (timercount < 3)
             {
                 IstimeOut = false;
@@ -377,7 +385,6 @@ namespace GraphInterface
                 timercount = 0;
                 IstimeOut = false;
             }
-
         }
     }
 }
