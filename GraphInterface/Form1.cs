@@ -144,12 +144,10 @@ namespace GraphInterface
         {
             textBoxExpression.Text += "/";
         }
-
         private void buttonMult_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "*";
         }
-
         private void buttonSub_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "-";
@@ -166,7 +164,6 @@ namespace GraphInterface
                 textBoxExpression.Text += memory.ToString();
             else if (textBoxExpression.Text.Length > 0)
             {
-                //  char res = textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault();
                 bool checkNumber = isNumber(textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault());
                 if (checkNumber == false)
                     textBoxExpression.Text += memory.ToString();
@@ -196,15 +193,12 @@ namespace GraphInterface
                 }
                 else MessageBox.Show($"Error code can't be written into memory!");
             }
-
         }
-
         private void buttonMC_Click(object sender, EventArgs e)
         {
             memory = 0;
             textBoxResult.Text = "";
         }
-
         private void buttonEqual_Click(object sender, EventArgs e)
         {
             label2.Text = "Result";
@@ -228,10 +222,8 @@ namespace GraphInterface
             textBoxResult.Text = results;
 
         }
-
         private void buttonOpenBracket_Click(object sender, EventArgs e)
         {
-            textBoxExpression.Focus();
             if (textBoxExpression.Text != "")
             {
                 char znak = textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault();
@@ -247,10 +239,8 @@ namespace GraphInterface
 
         private void buttonCloseBracket_Click(object sender, EventArgs e)
         {
-            textBoxExpression.Focus();
             textBoxExpression.Text += ")";
         }
-
         private void buttonBS_Click(object sender, EventArgs e)
         {
             if (textBoxExpression.Text.Length == 1)
@@ -262,13 +252,11 @@ namespace GraphInterface
                 textBoxExpression.Text = textBoxExpression.Text.Substring(0, textBoxExpression.Text.Length - 1);
             }
         }
-
         private void buttonC_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text = string.Empty;
             textBoxResult.Text = string.Empty;
         }
-
         private void buttonMod_Click(object sender, EventArgs e)
         {
             textBoxExpression.Text += "%";
@@ -306,7 +294,7 @@ namespace GraphInterface
                 textBoxExpression.Focus();
                 buttonEqual_Click(sender, e);
             }
-            //If shift key was pressed, it's not a number.
+            //If shift key was pressed, it's an alowed symbol.
             if (Control.ModifierKeys == Keys.Shift)
             {
                 if (e.KeyCode != Keys.Multiply &&
