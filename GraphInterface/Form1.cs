@@ -210,21 +210,22 @@ namespace GraphInterface
             timercount = 0;
             IstimeOut = false;
             AnalaizerClass.expression = textBoxExpression.Text;
-         //   textBoxResult.Text = AnalaizerClass.Estimate();
             string results = AnalaizerClass.Estimate();
             if (results.StartsWith("&"))
-            {
-                this.textBoxResult.ForeColor = System.Drawing.Color.Red;
+            {                
+                this.textBoxResult.ForeColor = Color.Red;
                 this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+
             }
             else
             {
-                this.textBoxResult.ForeColor = System.Drawing.Color.Blue;
+                this.textBoxResult.ForeColor = Color.Blue;
                 this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             }
             textBoxResult.Text = results;
+
         }
 
         private void buttonOpenBracket_Click(object sender, EventArgs e)
