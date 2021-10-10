@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLibrary", "ErrorLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClassBr", "CalcClassBr\CalcClassBr.csproj", "{99CFE500-B39E-40D1-AAFB-F185FC53070F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "GraphInterface\Calc.csproj", "{23E1F4FB-E51D-4BCB-865D-64462788678E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphInterface", "GraphInterface\GraphInterface.csproj", "{23E1F4FB-E51D-4BCB-865D-64462788678E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalizerClassLibrary", "AnalizerClassLibrary\AnalizerClassLibrary.csproj", "{28D27784-D8EF-42FD-9E46-C85481F20F20}"
 EndProject
