@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "GraphInterface\Calc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalizerClassLibrary", "AnalizerClassLibrary\AnalizerClassLibrary.csproj", "{28D27784-D8EF-42FD-9E46-C85481F20F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsClasses", "TestsClasses\TestsClasses.csproj", "{A1AB86F9-6FAB-4301-9373-A6775BC2D507}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{28D27784-D8EF-42FD-9E46-C85481F20F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28D27784-D8EF-42FD-9E46-C85481F20F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28D27784-D8EF-42FD-9E46-C85481F20F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1AB86F9-6FAB-4301-9373-A6775BC2D507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AB86F9-6FAB-4301-9373-A6775BC2D507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AB86F9-6FAB-4301-9373-A6775BC2D507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AB86F9-6FAB-4301-9373-A6775BC2D507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

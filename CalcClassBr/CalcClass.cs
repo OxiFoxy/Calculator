@@ -17,13 +17,14 @@ namespace CalcClassBr
         /// <returns>сума</returns>
         public static int Add(long a, long b)
         {
+            _lastError = "";
             long res;
-            if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
+            if ((a <= int.MaxValue && a >= int.MinValue) && (b <= int.MaxValue && b >= int.MinValue))
                 res = a + b;
             else
                 {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                throw new ArgumentOutOfRangeException(_lastError);
                 }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
@@ -31,7 +32,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Result out of range!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
         /// <summary> 
@@ -42,13 +43,14 @@ namespace CalcClassBr
         /// <returns>різниця</returns>
         public static int Sub(long a, long b)
         {
+            _lastError = "";
             long res;
-            if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
+            if ((a <= int.MaxValue && a >= int.MinValue) && (b <= int.MaxValue && b >= int.MinValue))
                 res = a - b;
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
@@ -56,7 +58,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Result out of range!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
         /// <summary> 
@@ -67,13 +69,14 @@ namespace CalcClassBr
         /// <returns>добуток</returns>
         public static int Mult(long a, long b)
         {
+            _lastError = "";
             long res;
-            if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
+            if ((a <= int.MaxValue && a >= int.MinValue) && (b <= int.MaxValue && b >= int.MinValue))
                 res = a * b;
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
@@ -81,7 +84,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Result out of range!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
         /// <summary> 
@@ -92,19 +95,20 @@ namespace CalcClassBr
         /// <returns>частка</returns> 
         public static int Div(long a, long b)
         {
+            _lastError = "";
             long res;
-            if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
+            if ((a <= int.MaxValue && a >= int.MinValue) && (b <= int.MaxValue && b >= int.MinValue))
                 if (b != 0)
                     res = a / b;
                 else
                 {
                     _lastError = ErrorsExpression.ERROR_09;
-                    throw new DivideByZeroException("You can't divide by 0!");
+                    throw new DivideByZeroException(_lastError);
                 }
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
@@ -112,7 +116,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Result out of range!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
 
 
@@ -125,19 +129,20 @@ namespace CalcClassBr
         /// <returns>остача</returns> 
         public static int Mod(long a, long b)
         {
+            _lastError = "";
             long res;
-            if ((a <= int.MaxValue && a >= int.MinValue) || (b <= int.MaxValue && b >= int.MinValue))
+            if ((a <= int.MaxValue && a >= int.MinValue) && (b <= int.MaxValue && b >= int.MinValue))
                 if (b != 0)
                     res = a % b;
                 else
                 {
                     _lastError = ErrorsExpression.ERROR_09;
-                    throw new DivideByZeroException("You can't divide by 0!");
+                    throw new DivideByZeroException(_lastError);
                 }
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range numbers!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
 
             if ((res <= int.MaxValue && res >= int.MinValue))
@@ -145,7 +150,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Result out of range!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
 
@@ -156,6 +161,7 @@ namespace CalcClassBr
         /// <returns></returns> 
         public static int ABS(long a)
         {
+            _lastError = "";
             long res;
             if (a <= int.MaxValue && a >= int.MinValue)
             {
@@ -165,7 +171,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range number!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
 
@@ -176,6 +182,7 @@ namespace CalcClassBr
         /// <returns></returns> 
         public static int IABS(long a)
         {
+            _lastError = "";
             long res;
             if (a <= int.MaxValue && a >= int.MinValue)
             {
@@ -185,7 +192,7 @@ namespace CalcClassBr
             else
             {
                 _lastError = ErrorsExpression.ERROR_06;
-                throw new ArgumentOutOfRangeException("Out of range number!");
+                throw new ArgumentOutOfRangeException(_lastError);
             }
         }
 
