@@ -224,6 +224,7 @@ namespace GraphInterface
         }
         private void buttonOpenBracket_Click(object sender, EventArgs e)
         {
+            IstimeOut = false;
             if (textBoxExpression.Text != "")
             {
                 char znak = textBoxExpression.Text.Substring(textBoxExpression.Text.Length - 1).FirstOrDefault();
