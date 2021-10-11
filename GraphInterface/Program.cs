@@ -18,32 +18,51 @@ namespace GraphInterface
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool FreeConsole();
 
+        [DllImport("kernel32.dll")]
+        static extern bool AttachConsole(int dwProcessId);
+        private const int ATTACH_PARENT_PROCESS = -1;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length > 0)
+            int argCount = args == null ? 0 : args.Length;
+            if (argCount > 0)
             {
+                // redirect console output to parent process;
+                // must be before any calls to Console.WriteLine()
+                AttachConsole(ATTACH_PARENT_PROCESS);
+
+
                 AnalaizerClass.expression = args[0];
+
+                int length = Console.CursorLeft;
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.WriteLine(new string(' ', length));
+                Console.SetCursorPosition(0, Console.CursorTop);
+
+                Console.WriteLine("Expression:" + AnalaizerClass.expression);
                 string result = AnalaizerClass.Estimate();
-                ConsoleColor color = ConsoleColor.White;
+
+                ConsoleColor color = ConsoleColor.Green;
+
                 if (result.StartsWith("&"))
                 {
                     result = result.TrimStart('&');
                     color = ConsoleColor.Red;
                 }
                 else
-                    result = result + Environment.NewLine + "0";
-                if (AllocConsole())
-                {
-                    Console.ForegroundColor = color;
-                    Console.OutputEncoding = Encoding.UTF8;
-                    Console.WriteLine(result);
-                    Console.WriteLine("Для виходу натисніть будь-яку клавішу...");
-                    Console.ReadKey(); FreeConsole();
-                }
+                    result = result + Environment.NewLine + "Error: 0";
+
+
+                ConsoleColor current = Console.ForegroundColor;
+                Console.ForegroundColor = color;
+                Console.OutputEncoding = Encoding.UTF8;                
+                Console.WriteLine("Result: " + result);                
+                Console.ForegroundColor = current;
+
                 return;
             }
             Application.EnableVisualStyles();

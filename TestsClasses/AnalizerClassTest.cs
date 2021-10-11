@@ -60,7 +60,7 @@ namespace TestsClasses
             Assert.AreEqual(expected, actual);
         }
         public TestContext TestContext { get; set; }
-        [DataSource("System.Data.SqlClient", @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Богдан\Desktop\Calculator\TestsClasses\bin\Debug\ListErrorsDB.mdf;Integrated Security=True;Connect Timeout=30", "Table", DataAccessMethod.Sequential)]
+        [DataSource("System.Data.SqlClient", @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\HMV\Desktop\IT STEP ACADEMY\CommandProject\Exam\ExamGitHub\Calculator\TestsClasses\bin\Debug\ListErrorsDB.mdf;Integrated Security=True;Connect Timeout=30", "Table", DataAccessMethod.Sequential)]
         [TestMethod]
         public void MathOperationMetodTest()
         {
